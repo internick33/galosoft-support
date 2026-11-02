@@ -1,6 +1,6 @@
 /* Galosoft Support · JS mínimo */
 const CONFIG = {
-  WEBHOOK: "https://TU-N8N/webhook/lead-support", // [DATO REAL: URL del webhook de n8n]
+  WEBHOOK: "https://n8n-gg9g.srv1880414.hstgr.cloud/webhook/lead-support",
   WA: "525593178429",
   MARCA: "Galosoft Support"
 };
@@ -46,7 +46,7 @@ document.querySelectorAll("form.lead").forEach(form => {
     const btn = form.querySelector("button[type=submit]");
     btn.disabled = true;
     try {
-      const r = await fetch(CONFIG.WEBHOOK, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
+      const r = await fetch(CONFIG.WEBHOOK, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data), signal: AbortSignal.timeout(15000) });
       if (!r.ok) throw new Error(r.status);
       st.textContent = "¡Gracias! Te escribimos por WhatsApp en menos de un día hábil.";
       form.reset();
