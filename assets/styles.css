@@ -75,7 +75,7 @@ p{margin:0 0 1em}
 
 /* Hero */
 .hero{padding:clamp(48px,7vw,96px) 0 clamp(56px,8vw,100px)}
-.hero .grid{display:grid;gap:48px;align-items:center}
+.hero .grid{display:grid;grid-template-columns:minmax(0,1fr);gap:48px;align-items:center}
 @media (min-width:1000px){.hero .grid{grid-template-columns:1.15fr .85fr}}
 .hero h1 em{font-style:normal;color:var(--green)}
 .hero .lead{margin-bottom:28px}
@@ -99,7 +99,7 @@ p{margin:0 0 1em}
 .ledger footer{padding:12px 22px;background:var(--bg);font-size:.8rem;color:var(--muted)}
 
 /* Rejillas y tarjetas */
-.cards{display:grid;gap:20px;margin-top:40px}
+.cards{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;margin-top:40px}
 @media (min-width:700px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (min-width:1000px){.cards--3{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:border-color .2s,transform .2s;min-width:0}
@@ -114,7 +114,7 @@ p{margin:0 0 1em}
 .card .more{display:inline-flex;align-items:center;gap:6px;margin-top:8px;padding:10px 0;font-weight:700;text-decoration:none;min-height:44px}
 
 /* Calendario mensual (banda marina) */
-.cal{display:grid;gap:16px;margin-top:40px}
+.cal{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:40px}
 @media (min-width:700px){.cal{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (min-width:1000px){.cal{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .cal div{border:1px solid rgba(255,255,255,.18);border-radius:var(--radius);padding:24px;min-width:0}
@@ -124,14 +124,14 @@ p{margin:0 0 1em}
 .fine{font-size:.85rem;margin-top:24px}
 
 /* Pasos */
-.steps{counter-reset:s;display:grid;gap:20px;margin-top:40px;padding:0;list-style:none}
+.steps{counter-reset:s;display:grid;grid-template-columns:minmax(0,1fr);gap:20px;margin-top:40px;padding:0;list-style:none}
 @media (min-width:1000px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .steps li{position:relative;padding:28px 28px 28px 84px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);min-width:0}
 .steps li::before{counter-increment:s;content:counter(s);position:absolute;left:24px;top:24px;width:42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font:600 1.2rem/1 var(--serif)}
 .steps h3{margin-bottom:.35em}.steps p{color:var(--muted);margin:0;font-size:1rem}
 
 /* Confianza */
-.trust{display:grid;gap:28px;align-items:start}
+.trust{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:start}
 @media (min-width:1000px){.trust{grid-template-columns:1fr 1fr}}
 .cred{background:var(--navy);color:#fff;border-radius:18px;padding:32px}
 .cred .kicker{color:var(--gold)}
@@ -139,7 +139,7 @@ p{margin:0 0 1em}
 .cred .num{font:600 2rem/1.1 var(--serif);color:#fff;margin:6px 0 14px}
 .cred a{color:#fff}
 .checks{list-style:none;margin:0;padding:0}
-.checks li{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.checks li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
 .checks svg{width:22px;height:22px;color:var(--green);margin-top:3px}
 .checks b{display:block}
 .checks span{color:var(--muted);font-size:.98rem}
@@ -154,7 +154,7 @@ p{margin:0 0 1em}
 .faq details p{color:var(--muted);padding-bottom:16px;margin:0;max-width:68ch}
 
 /* Formulario */
-.cta-box{display:grid;gap:40px;align-items:start}
+.cta-box{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;align-items:start}
 @media (min-width:1000px){.cta-box{grid-template-columns:1fr 1fr}}
 .form{background:var(--surface);color:var(--ink);border-radius:18px;padding:28px;border:1px solid var(--line)}
 .form label{display:block;font-weight:700;font-size:.95rem;margin-bottom:16px}
@@ -171,7 +171,7 @@ p{margin:0 0 1em}
 .sec--navy .cta-box .lead{color:var(--on-navy-muted)}
 
 /* Listas de trámites */
-.tlist{display:grid;gap:16px;margin-top:32px}
+.tlist{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:32px}
 @media (min-width:700px){.tlist{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .titem{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;display:flex;flex-direction:column;gap:6px;min-width:0}
 .titem h3{margin:0}
@@ -186,7 +186,9 @@ p{margin:0 0 1em}
 .prose{max-width:760px}
 .prose h2{font-size:1.5rem;margin-top:1.8em}
 .prose ul{padding-left:1.2em}.prose li{margin:.35em 0}
-.split{display:grid;gap:40px}
+.split{display:grid;grid-template-columns:minmax(0,1fr);gap:40px}
+.split>*{min-width:0}
+@media (max-width:480px){.btn{max-width:100%;white-space:normal;text-align:center}}
 @media (min-width:1000px){.split{grid-template-columns:1.1fr .9fr}}
 .contact-list{list-style:none;padding:0;margin:0}
 .contact-list li{padding:16px 0;border-bottom:1px solid var(--line)}
@@ -196,7 +198,7 @@ p{margin:0 0 1em}
 
 /* Pie */
 .ftr{background:var(--ink);color:var(--on-navy-muted);padding:56px 0 28px;font-size:.95rem}
-.ftr .cols{display:grid;gap:32px}
+.ftr .cols{display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
 @media (min-width:700px){.ftr .cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (min-width:1000px){.ftr .cols{grid-template-columns:1.4fr 1fr 1fr 1fr}}
 .ftr h4{color:#fff;font:700 .8rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px}
@@ -244,11 +246,11 @@ h1,h2{letter-spacing:-.025em;font-weight:700}
 .cal b{font-family:var(--serif)}
 .steps li::before{color:var(--gold);font-family:var(--mono);font-weight:700}
 .grid-bg{background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:32px 32px}
-.folio{display:grid;gap:24px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px}
+.folio{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px}
 @media (min-width:1000px){.folio{grid-template-columns:auto 1fr auto}}
 .sticker{width:132px;height:132px;border-radius:16px;background:var(--navy);color:#fff;display:grid;place-items:center;text-align:center;font:700 .72rem/1.3 var(--mono);letter-spacing:.06em;padding:14px}
 .sticker b{display:block;color:var(--gold);font-size:1.05rem;margin-top:6px}
-.plans{display:grid;gap:20px;margin-top:40px}
+.plans{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;margin-top:40px}
 @media (min-width:1000px){.plans{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .plan{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:10px;min-width:0}
 .plan--hl{border:2px solid var(--green)}
